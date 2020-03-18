@@ -4,8 +4,14 @@ public class Exercises {
 
   public int findMe(int[] list, int target) {
 
+    if (list == null || list.length == 0) {
+
+          return -1;
+          
+        }
+
     return -1;
-    
+
   }
 
   public int findMe(ArrayList<String> list, String target) {
