@@ -306,9 +306,38 @@ public class Exercises {
                      break;
 
                  }
-                 
+
               list[j] = temp;
          }
+
+       } else if (!ascending) {
+
+        for (int i = 1; i < list.length; i++) {
+
+            temp = list[i];
+
+            int j = 0;
+
+            for (j = i; j > 0; j--)
+
+                if (temp.compareTo(list[j - 1]) > 0) {
+
+                    list[j] = list[j - 1];
+
+                } else {
+
+                    break;
+
+                }
+
+             list[j] = temp;
+
+        }
+    }
+
+    return list;
+    
+}
 
   public int[] selection(int[] list, boolean ascending) {
     return null;
