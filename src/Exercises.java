@@ -45,7 +45,19 @@ public class Exercises {
   }
 
   public int findMeFaster(ArrayList<Integer> list, int target) {
+
+    if (list == null || list.size() == 0) {
+
+     return -1;
+
+   }
+
+    boolean located = false;
+    int beginning = 0;
+    int end = list.size();
+
     return -1;
+
   }
 
   public int findMeFaster(String[] list, String target) {
