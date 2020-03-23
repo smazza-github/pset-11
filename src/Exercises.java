@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Exercises {
 
@@ -114,7 +116,32 @@ public class Exercises {
   }
 
   public int[] bubble(int[] list, boolean ascending) {
+
+    if (list == null || list.length == 0) {
+
+              return null;
+
+          }
+
+          if (ascending) {
+
+              for (int i = 0; i < list.length -1; i++) {
+
+                  for (int j = 0; j < list.length -1 -i; j++) {
+
+                      if (list[j] > list[j + 1]) {
+
+                          int temp = list[j];
+
+                          list[j] = list[j + 1];
+                          list[j+1] = temp;
+
+                      }
+                  }
+              }
+
     return null;
+
   }
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
