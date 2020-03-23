@@ -336,12 +336,40 @@ public class Exercises {
     }
 
     return list;
-    
+
 }
 
   public int[] selection(int[] list, boolean ascending) {
-    return null;
-  }
+
+    if (list == null || list.length == 0) {
+
+      return null;
+
+    }
+
+    int[] arr = list;
+
+    if (list == null || list.length == 0) {
+
+          return null;
+      }
+
+      int temp;
+
+      if (ascending) {
+
+          for (int i = 0; i < list.length - 1; i++) {
+
+              int index = i;
+
+              for (int j = i + 1; j < list.length; j++) {
+
+                  if (list[j] < list[index]) {
+
+                      index = j;
+                      
+                  }
+              }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
     return null;
