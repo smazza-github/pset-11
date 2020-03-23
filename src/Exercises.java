@@ -56,6 +56,25 @@ public class Exercises {
     int beginning = 0;
     int end = list.size();
 
+    while (!isFound) {
+
+      int middle = (beginning+end)/2;
+
+      if (list.get(middle) == target) {
+
+        return middle;
+
+      } else if (list.get(middle) < target) {
+
+        end = middle;
+
+      } else if (list.get(middle) > target) {
+
+        beginning = middle;
+
+      }
+    }
+
     return -1;
 
   }
