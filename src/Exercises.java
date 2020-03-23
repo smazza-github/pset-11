@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class Exercises {
 
@@ -521,6 +519,7 @@ public class Exercises {
           }
 
           for (int i = restIndex; i < rest.size(); i++) {
+
               list.set(completeArrayIndex, rest.get(i));
               completeArrayIndex++;
 
@@ -528,10 +527,29 @@ public class Exercises {
       }
 
       return list;
-      
+
   }
 
   public String[] merge(String[] list, boolean ascending) {
-    return null;
-  }
-}
+
+    if (list == null || list.length == 0) {
+
+          return null;
+
+      }
+
+     if (list.length >= 2) {
+
+         String[] left = new String[list.length / 2];
+         String[] right = new String[list.length - list.length / 2];
+
+         for (int i = 0; i < left.length; i++) {
+
+             left[i] = list[i];
+
+         }
+         for (int i = 0; i < right.length; i++) {
+
+             right[i] = list[i + list.length / 2];
+
+         }
