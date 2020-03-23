@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Exercises {
 
@@ -48,69 +50,65 @@ public class Exercises {
 
     if (list == null || list.size() == 0) {
 
-     return -1;
+              return -1;
 
-   }
+          }
 
-    boolean located = false;
-    int beginning = 0;
-    int end = list.size();
+          int beginning = 0;
+          int center = 0;
+          int end = list.size() - 1;
 
-    while (!isFound) {
+          while (beginning <= end) {
 
-      int middle = (beginning+end)/2;
+              center = (beginning + end) / 2;
 
-      if (list.get(middle) == target) {
+              if (list.get(center) < target) {
 
-        return middle;
+                  beginning = center + 1;
 
-      } else if (list.get(middle) < target) {
+              } else if (list.get(center) > target) {
 
-        end = middle;
+                  end = center - 1;
 
-      } else if (list.get(middle) > target) {
+              } else if (list.get(center) == target) {
 
-        beginning = middle;
+                  return center;
+
+              }
+          }
+
+          return -1;
 
       }
-    }
-
-    return -1;
-
-  }
 
   public int findMeFaster(String[] list, String target) {
 
-    if (list == null || list.length == 0 || target == null) {
-
-      return -1;
-
-    }
-
-    boolean located = false;
-    int beginning = 0;
-    int end = list.length;
-
-    while (!isFound) {
-      int midpoint = (start + end) / 2;
-
-      if (list[middle].equals(target)) {
-
-        return middle;
-
-      } else if (list[middle].compareTo(target) < 0) {
-
-        end = midpoint;
-
-      } else if (list[middlet].compareTo(target) > 0) {
-
-        beginning = middle;
-
+    if (list == null || list.length == 0 || target.equals(null)) {
+          return -1;
       }
-    }
 
-    return -1;
+      int beginning = 0;
+      int center = 0;
+      int end = list.length;
 
+      while (beginning <= end) {
+
+          center = (beginning + end) / 2;
+
+          if (list[center].compareTo(target) < 0) {
+
+              beginning = center + 1;
+
+          } else if (list[center].compareTo(target) > 0) {
+
+              end = center - 1;
+
+          } else if (list[center].compareTo(target) == 0) {
+
+              return center;
+          }
+      }
+      return -1;
   }
 
   public int[] bubble(int[] list, boolean ascending) {
@@ -417,7 +415,7 @@ public class Exercises {
 
                   String value = list.get(j);
 
-                  if (value.compareTo(smallest) < 0) {
+                  if (value.compareTo(lowest) < 0) {
 
                       lowest = value;
                       lowestIndex = j;
@@ -574,7 +572,7 @@ public class Exercises {
         list[i] = right[b];
 
         b++;
-        
+
     }
    }
   }
