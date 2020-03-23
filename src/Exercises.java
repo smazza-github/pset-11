@@ -423,9 +423,29 @@ public class Exercises {
 
                       lowest = value;
                       lowestIndex = j;
-                      
+
                   }
               }
+
+              if (lowestIndex != i) {
+
+              String head = list.get(i);
+
+              list.set(i, lowest);
+              list.set(lowestIndex, head);
+
+          }
+      }
+
+      if (!ascending) {
+
+          Collections.reverse(list);
+
+      }
+
+      return list;
+      
+  }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
     return null;
