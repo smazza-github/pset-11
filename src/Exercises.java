@@ -482,10 +482,54 @@ public class Exercises {
 
             left = merge(left, true);
             right = merge(right, true);
-            
+
             int leftIndex = 0;
             int rightIndex = 0;
             int completeArrayIndex = 0;
+
+            while (leftIndex < left.size() && rightIndex < right.size()) {
+
+              if ((left.get(leftIndex).compareTo(right.get(rightIndex))) < 0) {
+
+                  list.set(completeArrayIndex, left.get(leftIndex));
+                  leftIndex++;
+
+              } else {
+
+                  list.set(completeArrayIndex, right.get(rightIndex));
+                  rightIndex++;
+
+              }
+
+              completeArrayIndex++;
+
+          }
+
+          ArrayList < Integer > rest;
+          int restIndex;
+
+          if (leftIndex >= left.size()) {
+
+              rest = right;
+              restIndex = rightIndex;
+
+          } else {
+
+              rest = left;
+              restIndex = leftIndex;
+
+          }
+
+          for (int i = restIndex; i < rest.size(); i++) {
+              list.set(completeArrayIndex, rest.get(i));
+              completeArrayIndex++;
+
+          }
+      }
+
+      return list;
+      
+  }
 
   public String[] merge(String[] list, boolean ascending) {
     return null;
