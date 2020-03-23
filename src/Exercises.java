@@ -25,6 +25,12 @@ public class Exercises {
 
   public int findMe(ArrayList<String> list, String target) {
 
+    if (list == null || list.size() == 0 || target == null) {
+
+          return -1;
+          
+        }
+
     return -1;
 
   }
