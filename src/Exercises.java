@@ -444,12 +444,48 @@ public class Exercises {
       }
 
       return list;
-      
+
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
-    return null;
-  }
+
+    if (list == null || list.size() == 0) {
+
+            return null;
+
+        }
+
+        ArrayList < Integer > left = new ArrayList < Integer > ();
+        ArrayList < Integer > right = new ArrayList < Integer > ();
+
+        int center;
+
+        if (list.size() == 1) {
+
+            return list;
+
+        } else {
+
+            center = list.size() / 2;
+
+            for (int i = 0; i < center; i++) {
+
+                left.add(list.get(i));
+
+            }
+
+            for (int i = center; i < list.size(); i++) {
+
+                right.add(list.get(i));
+
+            }
+
+            left = merge(left, true);
+            right = merge(right, true);
+            
+            int leftIndex = 0;
+            int rightIndex = 0;
+            int completeArrayIndex = 0;
 
   public String[] merge(String[] list, boolean ascending) {
     return null;
