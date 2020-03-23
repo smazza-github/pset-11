@@ -367,9 +367,40 @@ public class Exercises {
                   if (list[j] < list[index]) {
 
                       index = j;
-                      
+
                   }
               }
+
+              int lowerNumber = list[index];
+              list[index] = list[i];
+              list[i] = lowerNumber;
+          }
+
+      } else if (!ascending) {
+
+          for (int i = 0; i < list.length - 1; i++) {
+
+              int index = i;
+
+              for (int j = i + 1; j < list.length; j++) {
+
+                  if (list[j] > list[index]) {
+
+                      index = j;
+
+                  }
+              }
+
+              int lowerNumber = list[index];
+
+              list[index] = list[i];
+              list[i] = lowerNumber;
+
+          }
+      }
+
+      return list;
+  }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
     return null;
