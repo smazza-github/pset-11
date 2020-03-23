@@ -274,12 +274,41 @@ public class Exercises {
           }
 
           return list;
-          
+
       }
 
   public String[] insertion(String[] list, boolean ascending) {
-    return null;
-  }
+
+    if (list == null || list.length == 0) {
+
+         return null;
+
+     }
+
+     String temp;
+
+     if (ascending) {
+
+         for (int i = 1; i < list.length; i++) {
+
+             temp = list[i];
+
+             int j = 0;
+
+             for (j = i; j > 0; j--)
+
+                 if (temp.compareTo(list[j - 1]) < 0) {
+
+                     list[j] = list[j - 1];
+
+                 } else {
+
+                     break;
+
+                 }
+                 
+              list[j] = temp;
+         }
 
   public int[] selection(int[] list, boolean ascending) {
     return null;
