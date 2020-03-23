@@ -80,7 +80,37 @@ public class Exercises {
   }
 
   public int findMeFaster(String[] list, String target) {
+
+    if (list == null || list.length == 0 || target == null) {
+
+      return -1;
+
+    }
+
+    boolean located = false;
+    int beginning = 0;
+    int end = list.length;
+
+    while (!isFound) {
+      int midpoint = (start + end) / 2;
+
+      if (list[middle].equals(target)) {
+
+        return middle;
+
+      } else if (list[middle].compareTo(target) < 0) {
+
+        end = midpoint;
+
+      } else if (list[middlet].compareTo(target) > 0) {
+
+        beginning = middle;
+
+      }
+    }
+
     return -1;
+
   }
 
   public int[] bubble(int[] list, boolean ascending) {
